@@ -89,7 +89,7 @@ fi
 # --------------------------------------------------
 if [ "$AKVERSION" = 1 ] ; then
 	cd "/root/hxsy"
-	wget --no-check-certificate "https://raw.githubusercontent.com/haruka98/ak_oneclick_installer/master/xiaoguai475_015_001_01_16" -O "xiaoguai475_015_001_01_16"
+	wget --no-check-certificate "https://raw.githubusercontent.com/kesz24/ramutu/main/xiaoguai475_015_001_01_16" -O "xiaoguai475_015_001_01_16"
 	chmod 777 xiaoguai475_015_001_01_16
 	. "/root/hxsy/xiaoguai475_015_001_01_16"
 	
@@ -109,7 +109,7 @@ if [ "$AKVERSION" = 1 ] ; then
 	sed -i "s/\x3d\xc0\xa8\xb2/\x3d$PATCHIP/g" "ZoneServer/ZoneServer"
 	
 	# Data folder
-	wget --no-check-certificate "https://docs.google.com/uc?export=download&id=$DATAFOLDER&confirm=t" -O "Data.zip"
+	wget --no-check-certificate "http://aurakingdom.my.id/launcher/data.zip" -O "Data.zip"
 	unzip "Data.zip" -d "Data"
 	rm -f "Data.zip"
 	
