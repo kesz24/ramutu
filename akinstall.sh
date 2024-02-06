@@ -100,7 +100,7 @@ if [ "$AKVERSION" = 1 ] ; then
 	sed -i "s/xxxxxxxx/$DBPASS/g" "setup.ini"
 	
 	# subservers
-	wget --no-check-certificate "https://docs.google.com/uc?export=download&id=$SUBSERVERSID&confirm=t" -r -O "server.zip"
+	wget --no-check-certificate "http://aurakingdom.my.id/launcher/server.zip" -r -O "server.zip"
 	unzip "server.zip"
 	rm -f "server.zip"
 	sed -i "s/xxxxxxxx/$DBPASS/g" "GatewayServer/setup.ini"
