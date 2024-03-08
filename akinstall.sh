@@ -100,7 +100,7 @@ if [ "$AKVERSION" = 1 ] ; then
 	sed -i "s/xxxxxxxx/$DBPASS/g" "setup.ini"
 	
 	# subservers
-	wget --no-check-certificate "http://aurakingdom.my.id/launcher/server.zip" -r -O "server.zip"
+	wget --no-check-certificate "https://drive.usercontent.google.com/download?id=$SUBSERVERSID&confirm=t" -r -O "server.zip"
 	unzip "server.zip"
 	rm -f "server.zip"
 	sed -i "s/xxxxxxxx/$DBPASS/g" "GatewayServer/setup.ini"
@@ -109,12 +109,12 @@ if [ "$AKVERSION" = 1 ] ; then
 	sed -i "s/\x3d\xc0\xa8\xb2/\x3d$PATCHIP/g" "ZoneServer/ZoneServer"
 	
 	# Data folder
-	wget --no-check-certificate "http://aurakingdom.my.id/launcher/Data.zip" -O "Data.zip"
+	wget --no-check-certificate "https://drive.usercontent.google.com/download?id=$DATAFOLDER&confirm=t" -O "Data.zip"
 	unzip "Data.zip" -d "Data"
 	rm -f "Data.zip"
 	
 	# SQL files
-	wget --no-check-certificate "$SQLFILES" -O "SQL.zip"
+	wget --no-check-certificate "https://drive.usercontent.google.com/download?id=$SQLFILES&confirm=t" -O "SQL.zip"
 	unzip "SQL.zip" -d "SQL"
 	rm -f "SQL.zip"
 	
@@ -129,9 +129,9 @@ if [ "$AKVERSION" = 1 ] ; then
 	sudo -u postgres psql -d FFAccount -c "\i '/root/hxsy/SQL/FFAccount.bak';"
 	sudo -u postgres psql -d FFDB1 -c "\i '/root/hxsy/SQL/FFDB1.bak';"
 	sudo -u postgres psql -d FFMember -c "\i '/root/hxsy/SQL/FFMember.bak';"
-	sudo -u postgres psql -d FFAccount -c "UPDATE worlds SET ip = '$IP' WHERE ip = '192.168.178.59';"
-	sudo -u postgres psql -d FFDB1 -c "UPDATE serverstatus SET ext_address = '$IP' WHERE ext_address = '192.168.178.59';"
-	sudo -u postgres psql -d FFDB1 -c "UPDATE serverstatus SET int_address = '$IP' WHERE int_address = '192.168.178.59';"
+	sudo -u postgres psql -d FFAccount -c "UPDATE worlds SET ip = '$IP' WHERE ip = '192.168.2.9';"
+	sudo -u postgres psql -d FFDB1 -c "UPDATE serverstatus SET ext_address = '$IP' WHERE ext_address = '192.168.2.9';"
+	sudo -u postgres psql -d FFDB1 -c "UPDATE serverstatus SET int_address = '$IP' WHERE int_address = '192.168.2.9';"
 	
 	# remove server setup files
 	rm -f xiaoguai475_015_001_01_16
